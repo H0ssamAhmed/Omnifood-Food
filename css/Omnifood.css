@@ -1,0 +1,476 @@
+/*
+--- 01 TYPOGRAPHY SYSTEM
+
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Font weights
+Default: 400
+Medium: 500
+Semi-bold: 600
+Bold: 700
+
+- Line heights
+Default: 1
+Small: 1.05
+Medium: 1.2
+Paragraph default: 1.6
+Large: 1.8
+
+- Letter spacing
+-0.5px
+0.75px
+
+--- 02 COLORS
+
+- Primary: #e67e22
+- Tints:
+#fdf2e9
+#fae5d3
+#eb984e
+
+- Shades: 
+#cf711f
+#45260a
+
+- Accents:
+- Greys
+
+#888
+#767676 (lightest grey allowed on #fff)
+#6f6f6f (lightest grey allowed on #fdf2e9)
+#555
+#333
+
+--- 05 SHADOWS
+
+0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+
+--- 06 BORDER-RADIUS
+
+Default: 9px
+Medium: 11px
+
+--- 07 WHITESPACE
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+:root {
+    /* - Tints: #fdf2e9 #fae5d3 #eb984e - Primary: #e67e22; */
+    --Primary: #e67e22;
+    --Tints-1: #fdf2e9;
+    --Tints-2: #fae5d3;
+    --Tints-3: #eb984e;
+    --main-transtion: 0.3s;
+    --dark-shadow: #45260a;
+    --light-shadow: #cf711f;
+    --focus-color: #e67d2280;
+    --text-main-color: #555;
+
+    /* --green-color: #33d1cc;
+    --red-color: #ff3150;
+    --yellow-color: #ffc400;
+    --section-bg: #eff7fa; */
+}
+
+body {
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.main-title p {
+    color: var(--light-shadow);
+}
+
+
+
+/* ******************** Start Min Elements Style *********************/
+/* main btn */
+.main-btn {
+    background-color: var(--Primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    transition: all var(--main-transtion);
+}
+
+.btn:hover {
+    background-color: var(--light-shadow) !important;
+    color: white !important;
+}
+
+.btn:focus {
+    color: white !important;
+    border: none;
+    box-shadow: 0 0 0 0.5rem var(--focus-color);
+    outline: none;
+}
+
+.nav-item {
+    padding: 0.5rem 1rem;
+    margin: 0;
+}
+
+.radius-9 {
+    border-radius: 9px;
+}
+
+/* ********End main btn********** */
+
+/* ******************** End Min Elements Style *********************/
+
+/* *********** Start NavBar *********** */
+header .navbar,
+.landing-section {
+    background-color: var(--Tints-1);
+}
+
+.logo {
+    height: 1.4rem;
+}
+
+header .navbar .nav-link {
+    font-weight: 500;
+    transition: all var(--main-transtion);
+}
+
+.navbar-nav .nav-item:not(:last-child) a.nav-link:hover {
+    color: var(--Primary) !important;
+}
+
+/* *********** End NavBar *********** */
+/* ******************** Start landing ******************** */
+.landing-section .text a:nth-of-type(2) {
+    transition: var(--main-transtion);
+    border: 5px solid white;
+    background-color: white;
+}
+
+.landing-section .text a:nth-of-type(2):hover {
+    background-color: var(--Tints-1) !important;
+    color: #333333 !important;
+}
+
+.landing-section .customers img {
+    width: 2.3rem;
+    height: 2.3rem;
+    cursor: pointer;
+    margin-left: -1.5rem;
+    outline: 5px solid white;
+    transition: var(--main-transtion);
+}
+
+.landing-section .customers img:hover {
+    transform: scale(1.5);
+}
+
+.landing-section .customers .img-holder {
+    margin-left: 1.5rem;
+}
+
+.landing-section .meals span {
+    color: var(--Primary);
+}
+
+/* ******************** End landing ******************** */
+/* ******************** Start FEATURED ******************** */
+.feature-section .feature-img img {
+    width: 10rem;
+    filter: blur(1px) grayscale(1);
+    transition: all var(--main-transtion);
+}
+
+.feature-section .feature-img img:hover {
+    filter: blur(0px) grayscale(0);
+}
+
+/* ******************** End FEATURED  ******************** */
+/* ******************** Start steps  ******************** */
+
+.steps-section .steps .text span {
+    font-size: 5rem;
+}
+
+.steps-section .steps .step .img-holder {
+    position: relative;
+    width: 15rem;
+}
+
+.steps-section .steps .step .img-holder::after,
+.steps-section .steps .step .img-holder::before {
+    position: absolute;
+    content: "";
+    border-radius: 50%;
+    transition: var(--main-transtion);
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+}
+
+.steps-section .steps .step .img-holder::before,
+.steps-section .steps .step .img-holder:hover:after {
+    background-color: var(--Tints-2);
+    width: 240px;
+    height: 240px;
+    z-index: -1;
+}
+
+.steps-section .steps .step .img-holder::after,
+.steps-section .steps .step .img-holder:hover::before {
+    background-color: var(--Tints-1);
+    width: 290px;
+    height: 290px;
+    z-index: -2;
+}
+
+/* ******************** End steps  ******************** */
+/* ******************** Start meals******************** */
+.meals-section .card-text svg {
+    color: var(--Primary);
+    padding-right: 0.5rem;
+}
+
+.meals-section .meal {
+    border: none !important;
+    box-shadow: 0 2.4rem 4.8rem rgb(0 0 0 / 8%);
+    transition: var(--main-transtion);
+}
+
+.meals-section .meal:hover {
+    transform: translateY(-1rem);
+}
+
+.vegetarian {
+    padding: 0rem 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 40px;
+    display: inline-block;
+    width: fit-content;
+    background-color: #51cf66;
+}
+
+.vegan {
+    padding: 0rem 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 40px;
+    display: inline-block;
+    width: fit-content;
+    background-color: #94d82d;
+}
+
+.paleo {
+    padding: 0rem 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 40px;
+    display: inline-block;
+    width: fit-content;
+    background-color: #ffd43b;
+}
+
+.meals-section .card-text p i {
+    color: var(--Primary);
+}
+
+/* ******************** End meals******************** */
+/* ******************** Start testimonials******************** */
+.section-testimonials {
+    background-color: var(--Tints-1);
+}
+
+.section-testimonials .figures figure img {
+    display: block;
+    width: 100%;
+    transition: all var(--main-transtion);
+}
+
+.section-testimonials .figures figure img:hover {
+    transform: scale(1.2);
+}
+
+.section-testimonials .all-recipes {
+    color: var(--light-shadow);
+    text-decoration: underline;
+    transition: var(--main-transtion);
+    width: fit-content;
+    margin: 1rem auto;
+}
+
+.section-testimonials .all-recipes:hover {
+    text-decoration: none;
+}
+
+/* ******************** End testimonials******************** */
+/* ******************** Start pricing******************** */
+.pricing-section .card-title p,
+.pricing-section .card-body {
+    color: var(--text-main-color);
+}
+
+.pricing-section .card h5,
+.pricing-section .card-body svg {
+    color: var(--Primary);
+}
+
+
+.pricing-section .card {
+    border-color: #fdf2e9;
+
+}
+
+.pricing-section .best-value .card {
+    background-color: var(--Tints-1);
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-section .best-value .card::before {
+    content: "Best value";
+    position: absolute;
+    top: 5%;
+    right: -17%;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-main-color);
+    background-color: #ffd43b;
+    padding: 0.5rem 4rem;
+    transform: rotate(45deg);
+    z-index: 1;
+}
+
+.Prices-including {
+    color: var(--text-main-color);
+}
+
+/* ******************** End pricing******************** */
+/* ******************** Start features******************** */
+.features-section {
+    text-align: center;
+}
+
+.features-section .box svg {
+    border-radius: 50%;
+    color: var(--Primary);
+    background-color: var(--Tints-1);
+    padding: 10px;
+    height: 20px;
+    width: 20px;
+    font-size: 12;
+    margin-bottom: 2rem;
+}
+
+.features-section .box p {
+    color: var(--text-main-color);
+}
+
+.features-section .box .p {
+    color: var(--text-main-color);
+}
+
+.features-section {
+    text-align: center;
+}
+
+.features-section {
+    text-align: center;
+}
+
+/* ******************** End features******************** */
+/* ******************** Start mail ******************** */
+.mail-section .img-holder {
+    max-height: 800px;
+    height: 740px;
+    background-position: center;
+    background-image:
+        linear-gradient(to right bottom,
+            rgba(235, 151, 78, 0.35),
+            rgba(230, 125, 34, 0.35)),
+        url("../img/eating.jpg");
+    background-size: cover;
+}
+
+.mail-section .row {
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: var(--Primary);
+}
+
+.mail-section form input,
+.mail-section form select {
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: var(--Tints-1);
+    border: none;
+    outline: none;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    transition: var(--main-transtion);
+}
+
+.mail-section form input:focus,
+.mail-section form select:focus {
+    box-shadow: 0 0 0 0.4rem #fdf2e980;
+
+}
+
+.mail-section form select option {
+    background-color: var(--Tints-1);
+}
+
+.mail-section form input[type="submit"] {
+    color: white;
+    transition: var(--main-transtion);
+    background-color: var(--dark-shadow);
+}
+
+.mail-section form input[type="submit"]:hover {
+    color: var(--dark-shadow);
+    background-color: white;
+}
+
+
+/* ******************** End mail ******************** */
+/* ******************** Start Footrt ******************** */
+footer .row a,
+footer .row p {
+    color: #767676;
+}
+
+footer li {
+    margin: 1rem 0;
+}
+
+footer .social-media svg {
+    width: 10px;
+    height: 10px;
+    color: white;
+}
+
+footer .social-media .facebook {
+    background-color: #1877f2;
+}
+
+footer .social-media .twitter {
+    background-color: #1da1f2;
+}
+
+footer .social-media .linkedin {
+    background-color: #0077b5;
+}
+
+footer .social-media .youtube {
+    background-color: #ff0000;
+}
+
+/* ******************** End Footrt ******************** */
